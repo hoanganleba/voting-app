@@ -24,32 +24,32 @@ const Navbar: FC<NavbarProps> = (props) => {
                 setAuthContext(item)
             }
         }
-    }, [])
+    }, [setAuthContext])
 
     return (
         <div className="container flex mx-auto py-4 items-center px-4 md:px-0">
             <Link href="/">
-                <h1 className="uppercase font-semibold">Voting App</h1>
+                <a className="uppercase font-semibold">Voting App</a>
             </Link>
             {props.authContext !== '' ? (
                     <div className="ml-auto">
-                        <span>{props.authContext}</span>
+                        <span className="mr-2">{props.authContext}</span>
                         <Link href="/myPoll">
-                            <a className="inline-block mx-2 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded focus:outline-none font-semibold">My
+                            <a className="text-sm inline-block mx-2 bg-blue-100 hover:bg-blue-200 text-gray-900 px-4 py-2 rounded focus:outline-none font-medium">My
                                 Poll
                             </a>
                         </Link>
                         <button
                             onClick={logout}
-                            className="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded focus:outline-none font-semibold">Logout
+                            className="text-sm inline-block bg-blue-100 hover:bg-blue-200 text-blue-900 px-4 py-2 rounded focus:outline-none font-medium">Logout
                         </button>
                     </div>) :
                 (<div className="ml-auto">
                     <Link href="/register">
-                        <a className="inline-block mr-2 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded focus:outline-none font-semibold">Register</a>
+                        <a className="text-sm inline-block mr-2 border border-blue-100 hover:bg-blue-200 text-blue-900 px-4 py-2 rounded focus:outline-none font-medium">Register</a>
                     </Link>
                     <Link href="/login">
-                        <a className="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded focus:outline-none font-semibold">Login</a>
+                        <a className="text-sm inline-block bg-blue-100 hover:bg-blue-200 text-gray-900 px-4 py-2 rounded focus:outline-none font-medium">Login</a>
                     </Link>
                 </div>)
             }

@@ -41,21 +41,21 @@ const Register: NextPage = () => {
                 <div
                     className={!errorMessage ? 'hidden' : '' + 'text-red-800 bg-red-300 py-4 px-3 font-semibold rounded my-4'}>{errorMessage}</div>
                 <label>
-                    <span className="block mb-2">Username</span>
+                    <span className="block mb-2 text-sm">Username</span>
                     <input value={username} onChange={(e) => setUsername(e.target.value)} type="text"
-                           className="block w-full border border-gray-300 py-2 px-3 rounded" id="username"
+                           className="block w-full border border-gray-300 py-1 px-2 rounded" id="username"
                            name="username"/>
                 </label>
                 <label>
-                    <span className="block my-2">Password</span>
+                    <span className="block my-2 text-sm">Password</span>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password"
-                           className="block w-full border border-gray-300 py-2 px-3 rounded"
+                           className="block w-full border border-gray-300 py-1 px-2 rounded"
                            id="password"
                            name="password"/>
                 </label>
                 <button
                     onClick={submit}
-                    className="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded focus:outline-none font-semibold">
+                    className="text-sm mt-4 bg-blue-100 hover:bg-blue-200 text-blue-900 px-4 py-2 rounded focus:outline-none font-medium">
                     <span className={!processing ? 'hidden' : ''}>Processing...</span>
                     <span className={processing ? 'hidden' : ''}>Register</span>
                 </button>

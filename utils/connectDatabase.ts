@@ -1,10 +1,12 @@
-import {MongoClient} from 'mongodb'
+import mongoose from 'mongoose'
+
+const MONGO_URI: any = process.env.MONGO_URI
 
 export const connectDatabase = async () => {
-    // @ts-ignore
-    const client = await MongoClient.connect(process.env.MONGO_URI, {
+    mongoose.connect(MONGO_URI, {
         useNewUrlParser: true,
+        useFindAndModify: true,
         useUnifiedTopology: true,
-    })
-    return client.db('voting-app');
+        useCreateIndex: true,
+    });
 }
